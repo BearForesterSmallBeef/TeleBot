@@ -4,7 +4,7 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 reply_keyboard = [['/address', '/phone'],
                   ['/site', '/work_time'],
-                  ['/set 1', '/set 2', '/set 3', '/set 4'],
+                  ['/set_timer 1', '/set_timer 2', '/set_timer 3', '/set_timer 4'],
                   ['/unset'],
                   ['/close']]
 markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=False)
@@ -41,7 +41,7 @@ def main():
 
     dp.add_handler(CommandHandler("close", close_keyboard))
 
-    dp.add_handler(CommandHandler("set", set_timer,
+    dp.add_handler(CommandHandler("set_timer", set_timer,
                                   pass_args=True,
                                   pass_job_queue=True,
                                   pass_chat_data=True))
